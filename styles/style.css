@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+/* Reset */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+
+
+/* Utility */
+body{
+    line-height: 1.7;
+    color:grey;
+    font-weight: 400;
+    font-size: 1rem;
+}
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+.flex-col {
+    flex-direction: column;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:rgba(0, 0, 0, 0.7);
+}
+img{
+    width: 100%;
+}
+
+/********* 1. Header *********/
+#header{
+    height: 100vh;
+    background-color: #F8F9FA;
+}
+#header #header-top{
+    justify-content: space-between;
+}
+
+#header #header-top .header-logo{
+    padding: 15px;
+}
+#header #header-top .header-logo a{
+    display: inline-block;
+    height: 100%;
+    font-size: 32px;
+    color:#000;
+}
+#header #header-top .header-logo span{
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(162, 192, 190);
+}
+#header #header-top .header-list{
+    padding: 0 20px;
+}
+
+#header #header-top .header-list .header-list-item a{
+    display: inline-block;
+    padding: 30px 20px;
+    color: rgba(0, 0, 0, 0.7);
+}
+#header #header-top .header-list .header-list-item a:hover{
+    color:#000;
+}
+#header #header-top .header-list .header-list-item a i{
+    padding-left: 5px;
+    /* color: inherit; */
+    font-weight: 600;
+    
+}
+
+/* Showcase */
+#header #header-showcase {
+    /* flex-direction: column; */
+    height: calc(100vh- 87);
+    border: 1px solid red;
+    /* justify-content: center; */
+    align-items: center;
+    /* height: 100vh;
+    height: calc(100vh -83px); */
+}
+#header #header-showcase .header-showcase-left{
+    flex-basis: 55%;
+    padding: 0 15px;
+}
+#header #header-showcase .header-showcase-left h1{
+    color:#000;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+#header #header-showcase .header-showcase-right{
+
+}
+#header #header-showcase .header-showcase-right img{
+    width: 445px;
+    height: 660px;
+    padding: 0 15px;
+}

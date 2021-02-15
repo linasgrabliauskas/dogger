@@ -96,11 +96,11 @@ h2 {
           box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1);
 }
 
-.sticky .header__navigation__logo {
+.sticky .header__logo {
   padding: 5px;
 }
 
-.sticky .header__navigation__nav__list__item > a {
+.sticky .header__nav-item > a {
   padding: 20px;
 }
 
@@ -166,73 +166,73 @@ button:focus {
           justify-content: space-between;
 }
 
-.header__navigation__logo {
+.header__logo {
   padding: 15px;
 }
 
-.header__navigation__logo a {
+.header__logo a {
   height: 100%;
   font-size: 32px;
   color: #000;
 }
 
-.header__navigation__logo span {
+.header__logo span {
   font-size: 30px;
   color: #a2c0be;
 }
 
-.header__navigation__nav__list {
+.header__nav-desktop {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 0 15px;
 }
 
-.header__navigation__nav__list__item a {
+.header__nav-item a {
   display: inline-block;
   padding: 30px 20px;
   color: rgba(0, 0, 0, 0.7);
   position: relative;
 }
 
-.header__navigation__nav__list__item a i {
+.header__nav-item a i {
   padding-left: 3px;
   vertical-align: text-top;
   padding-top: 7px;
   font-size: 9px;
 }
 
-.header__navigation__nav__list__item:last-child a {
+.header__nav-item:last-child a {
   margin-right: 0;
 }
 
-.header__navigation__nav__list__item:hover a {
+.header__nav-item:hover a {
   color: #000;
 }
 
-.header__navigation__nav__list__item__nested-one {
+.header__nav-item--nest1 {
   z-index: 2;
   border-top: 2px solid #a2c0be;
   position: absolute;
   width: 210px;
 }
 
-.header__navigation__nav__list__item__nested-one li a {
+.header__nav-item--nest1 li a {
   width: 100%;
   padding: 9px 20px;
   background-color: #fff;
   color: #000;
 }
 
-.header__navigation__nav__list__item__nested-one li a i {
+.header__nav-item--nest1 li a i {
   padding-left: 80px;
 }
 
-.header__navigation__nav__list__item__nested-one li a:hover {
+.header__nav-item--nest1 li a:hover {
   background-color: #eff1f3;
 }
 
-.header__navigation__nav__list__item__nested-two {
+.header__nav-item--nest2 {
   z-index: 2;
   border-top: 2px solid #a2c0be;
   position: relative;
@@ -241,14 +241,14 @@ button:focus {
   width: 210px;
 }
 
-.header__navigation__nav__list__item__nested-two li a {
+.header__nav-item--nest2 li a {
   width: 100%;
   padding: 9px 20px;
   background-color: #fff;
   color: #000;
 }
 
-.header__navigation__nav__list__item__nested-two li a:hover {
+.header__nav-item--nest2 li a:hover {
   background-color: #eff1f3;
 }
 
@@ -268,7 +268,7 @@ button:focus {
           justify-content: space-between;
 }
 
-.header__showcase__info {
+.header__showcase-info {
   -ms-flex-preferred-size: 55%;
       flex-basis: 55%;
   -ms-flex-item-align: start;
@@ -276,7 +276,7 @@ button:focus {
   padding: 70px 15px 0 15px;
 }
 
-.header__showcase__info h1 {
+.header__showcase-info h1 {
   color: #000;
   font-size: 64px;
   font-weight: 700;
@@ -284,7 +284,7 @@ button:focus {
   margin-bottom: 8px;
 }
 
-.header__showcase__info p {
+.header__showcase-info p {
   color: #999999;
   font-weight: 100;
   font-size: 19.2px;
@@ -292,7 +292,7 @@ button:focus {
   line-height: 1.5;
 }
 
-.header__showcase__img img {
+.header__showcase-img img {
   width: 445px;
   height: 658px;
   margin: 0 16px -8px 15px;
@@ -343,7 +343,13 @@ button:focus {
           align-items: center;
 }
 
-.welcome__article__text {
+.welcome__article:nth-child(3) .welcome__article-info {
+  text-align: left;
+  margin: 0 0 0 95px;
+  padding: 0 15px 24px 15px;
+}
+
+.welcome__article-info {
   -ms-flex-preferred-size: 42%;
       flex-basis: 42%;
   margin: 0 95px 24px 0;
@@ -351,19 +357,19 @@ button:focus {
   text-align: right;
 }
 
-.welcome__article__text h2 {
+.welcome__article-info h2 {
   font-weight: 500;
 }
 
-.welcome__article__text p {
+.welcome__article-info p {
   padding-bottom: 24px;
 }
 
-.welcome__article__text .btn:hover {
+.welcome__article-info .btn:hover {
   background-color: #212529;
 }
 
-.welcome__article__img {
+.welcome__article-img {
   width: 48%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -381,7 +387,7 @@ button:focus {
   position: relative;
 }
 
-.welcome__article__img::after {
+.welcome__article-img::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -398,19 +404,13 @@ button:focus {
   transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
 }
 
-.welcome__article__img:hover {
+.welcome__article-img:hover {
   cursor: pointer;
 }
 
-.welcome__article__img:hover:after {
+.welcome__article-img:hover:after {
   -webkit-transform: translate(10px, 10px);
           transform: translate(10px, 10px);
-}
-
-.welcome__article:nth-child(3) .welcome__article__text {
-  text-align: left;
-  margin: 0 0 0 95px;
-  padding: 0 15px 24px 15px;
 }
 
 /* *********** 3. Section: About Us ********** */
@@ -457,33 +457,33 @@ button:focus {
   padding: 0 15px;
 }
 
-.about-us__info__heading p.lead {
+.about-us__heading p.lead {
   margin-bottom: 16px;
   font-size: 20px;
   font-weight: 300;
 }
 
-.about-us__info__heading p {
+.about-us__heading p {
   margin-bottom: 24px;
 }
 
-.about-us__info__list {
+.about-us__list {
   margin-top: 10px;
 }
 
-.about-us__info__list li {
+.about-us__list li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 15px;
 }
 
-.about-us__info__list li p {
+.about-us__list li p {
   line-height: 1.5;
   padding-left: 16px;
 }
 
-.about-us__info__list li img {
+.about-us__list li img {
   width: auto;
   height: 18px;
 }
@@ -567,17 +567,31 @@ button:focus {
   display: flex;
 }
 
-.our-trainers__list__item {
+.our-trainers__list-item {
   margin-bottom: 24px;
   padding: 0 15px;
 }
 
-.our-trainers__list__item__img {
+.our-trainers__list-item h3 {
+  margin: 30px 0 21px 0;
+  padding: 0 16px;
+  font-size: 21px;
+  font-weight: 500;
+  color: #405a58;
+}
+
+.our-trainers__list-item p {
+  font-size: 16px;
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.our-trainers__img {
   position: relative;
   z-index: 0;
 }
 
-.our-trainers__list__item__img:after {
+.our-trainers__img:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -594,37 +608,23 @@ button:focus {
   transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
 }
 
-.our-trainers__list__item__img:hover {
+.our-trainers__img:hover {
   cursor: pointer;
 }
 
-.our-trainers__list__item__img:hover:after {
+.our-trainers__img:hover:after {
   -webkit-transform: translate(10px, 12px);
           transform: translate(10px, 12px);
 }
 
-.our-trainers__list__item h3 {
-  margin: 30px 0 21px 0;
-  padding: 0 16px;
-  font-size: 21px;
-  font-weight: 500;
-  color: #405a58;
-}
-
-.our-trainers__list__item p {
-  font-size: 16px;
-  padding: 0 16px;
-  margin-bottom: 16px;
-}
-
-.our-trainers__list__item .socials {
+.our-trainers__socials {
   padding: 0 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.our-trainers__list__item .socials li {
+.our-trainers__socials li {
   margin: 5px;
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: -webkit-transform 0.2s ease;
@@ -632,7 +632,7 @@ button:focus {
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
-.our-trainers__list__item .socials li i {
+.our-trainers__socials li i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -654,9 +654,10 @@ button:focus {
   color: #000;
 }
 
-.our-trainers__list__item .socials li:hover {
+.our-trainers__socials li:hover {
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
+  cursor: pointer;
 }
 
 /* *********** 5. Section: Pricing table ********** */
@@ -686,13 +687,13 @@ button:focus {
   text-align: center;
 }
 
-.pricing-table__list {
+.pricing-table__card-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.pricing-table__list .card {
+.pricing-table__card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -711,61 +712,61 @@ button:focus {
   color: #fff;
 }
 
-.pricing-table__list .card__title {
-  font-size: 28px;
-  font-weight: 500;
-}
-
-.pricing-table__list .card__price {
-  font-size: 16px;
-}
-
-.pricing-table__list .card__price span {
-  font-size: 48px;
-}
-
-.pricing-table__list .card__list li {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.pricing-table__list .card__list li span {
-  margin-right: 15px;
-}
-
-.pricing-table__list .card__list .strike {
-  opacity: 0.5;
-  text-decoration: line-through;
-}
-
-.pricing-table__list .card__list .strike span {
-  display: inline-block;
-  text-decoration: none;
-  opacity: 1;
-}
-
-.pricing-table__list .card .btn {
+.pricing-table__card .btn {
   background-color: #6c757d;
   font-size: 16px;
 }
 
-.pricing-table__list .card .btn:hover {
+.pricing-table__card .btn:hover {
   background-color: #5a6268;
   cursor: pointer;
 }
 
-.pricing-table__list .card:nth-child(2) {
+.pricing-table__card--dark {
   background-color: #343a40;
 }
 
-.pricing-table__list .card:nth-child(2) .btn {
+.pricing-table__card--dark .btn {
   background-color: #a2c0be;
 }
 
-.pricing-table__list .card:nth-child(2) .btn:hover {
+.pricing-table__card--dark .btn:hover {
   background-color: #000;
   border: 1px solid #000;
   cursor: pointer;
+}
+
+.pricing-table__title {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.pricing-table__price {
+  font-size: 16px;
+}
+
+.pricing-table__price span {
+  font-size: 48px;
+}
+
+.pricing-table__list li {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.pricing-table__list li span {
+  margin-right: 15px;
+}
+
+.pricing-table__list .strike {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.pricing-table__list .strike span {
+  display: inline-block;
+  text-decoration: none;
+  opacity: 1;
 }
 
 /* *********** 6. Section: FAQ ********** */
@@ -804,14 +805,14 @@ button:focus {
           align-items: flex-start;
 }
 
-.faq__questions__question {
+.faq__list {
   width: 50%;
   margin-right: 50px;
   padding-right: 15px;
   cursor: pointer;
 }
 
-.faq__questions__question__item {
+.faq__list-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -821,7 +822,26 @@ button:focus {
   padding-bottom: 10px;
 }
 
-.faq__questions__question__item-paw {
+.faq__list-item article {
+  width: 80%;
+}
+
+.faq__list-item article h3 {
+  font-size: 19px;
+  font-weight: 400;
+  color: black;
+  margin-bottom: 8px;
+}
+
+.faq__list-item article p {
+  display: none;
+}
+
+.faq__list-item--active article p {
+  display: block;
+}
+
+.faq__paw {
   width: 30px;
   height: 30px;
   margin-right: 10px;
@@ -833,26 +853,7 @@ button:focus {
   background-size: 60% 60%;
 }
 
-.faq__questions__question__item article {
-  width: 80%;
-}
-
-.faq__questions__question__item article h3 {
-  font-size: 19px;
-  font-weight: 400;
-  color: black;
-  margin-bottom: 8px;
-}
-
-.faq__questions__question__item article p {
-  display: none;
-}
-
-.faq__questions__question__item.active article p {
-  display: block;
-}
-
-.faq__questions .img-fluid {
+.faq .img-fluid {
   width: 50%;
   max-width: 100%;
   padding: 0 15px;
@@ -881,7 +882,7 @@ button:focus {
   margin-bottom: 48px;
 }
 
-.happy-customers__testimonials-list {
+.happy-customers__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -901,7 +902,7 @@ button:focus {
   min-height: 510px;
 }
 
-.happy-customers__testimonials-list__item {
+.happy-customers__list-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -919,7 +920,7 @@ button:focus {
   max-width: 340px;
 }
 
-.happy-customers__testimonials-list__item__text {
+.happy-customers__text {
   background-color: #a2c0be;
   margin-bottom: 24px;
   padding: 30px;
@@ -933,7 +934,7 @@ button:focus {
   position: relative;
 }
 
-.happy-customers__testimonials-list__item__text::after {
+.happy-customers__text::after {
   content: " ";
   position: absolute;
   top: 100%;
@@ -944,7 +945,7 @@ button:focus {
   border-color: #a2c0be transparent transparent transparent;
 }
 
-.happy-customers__testimonials-list__item__photo {
+.happy-customers__photo {
   width: 100px;
   height: 100px;
   margin: 20px 0;
@@ -953,12 +954,12 @@ button:focus {
   overflow: hidden;
 }
 
-.happy-customers__testimonials-list__item__photo img {
+.happy-customers__photo img {
   width: 80px;
   height: 80px;
 }
 
-.happy-customers__testimonials-list__item__name {
+.happy-customers__name {
   font-size: 18px;
   font-weight: 500;
   color: #000;
@@ -980,7 +981,7 @@ button:focus {
           align-items: center;
 }
 
-.happy-customers__arrows__arrow {
+.happy-customers__arrow {
   padding: 20px;
   font-size: 22px;
   color: #000;
@@ -1064,7 +1065,7 @@ button:focus {
       grid-template-columns: repeat(2, 1fr);
 }
 
-.dogger-blog__list__item {
+.dogger-blog__list-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1085,12 +1086,12 @@ button:focus {
   padding: 0 15px;
 }
 
-.dogger-blog__list__item__photo {
+.dogger-blog__photo {
   max-width: 190px;
   margin-right: 30px;
 }
 
-.dogger-blog__list__item__title {
+.dogger-blog__title {
   display: inline-block;
   font-size: 21px;
   line-height: 27px;
@@ -1099,16 +1100,16 @@ button:focus {
   transition: all 0.3s ease;
 }
 
-.dogger-blog__list__item__title:hover {
+.dogger-blog__title:hover {
   color: #a2c0be;
 }
 
-.dogger-blog__list__item__date {
+.dogger-blog__date {
   color: #b3b3b3;
   margin: 8px 0;
 }
 
-.dogger-blog__list__item__btn {
+.dogger-blog__btn {
   display: inline-block;
   color: #a2c0be;
   margin-top: 15px;
@@ -1116,7 +1117,7 @@ button:focus {
   transition: all 0.3s ease;
 }
 
-.dogger-blog__list__item__btn:hover {
+.dogger-blog__btn:hover {
   color: #7c9997;
 }
 
@@ -1154,16 +1155,16 @@ button:focus {
       grid-template-columns: repeat(3, 1fr);
 }
 
-.our-services__list__item {
+.our-services__list-item {
   margin-bottom: 24px;
   padding: 0 15px;
 }
 
-.our-services__list__item__photo {
+.our-services__photo {
   max-width: 100px;
 }
 
-.our-services__list__item__title {
+.our-services__title {
   margin: 30px 0 16px 0;
   font-size: 21px;
   font-weight: 500;
@@ -1192,16 +1193,22 @@ button:focus {
   color: #405a58;
 }
 
-.contact-us__form__item {
+.contact-us__form .btn {
+  font-size: 16px;
+  background-color: #343a40;
+  color: white;
+}
+
+.contact-us__form-item {
   margin-bottom: 15px;
 }
 
-.contact-us__form__item label {
+.contact-us__form-item label {
   display: inline-block;
   margin-bottom: 8px;
 }
 
-.contact-us__form__item input {
+.contact-us__form-item input {
   width: 100%;
   height: 43px;
   border: none;
@@ -1209,11 +1216,11 @@ button:focus {
   padding: 6px 12px;
 }
 
-.contact-us__form__item input:focus {
+.contact-us__form-item input:focus {
   outline: none;
 }
 
-.contact-us__form__item textarea {
+.contact-us__form-item textarea {
   display: block;
   width: 100%;
   border: none;
@@ -1226,11 +1233,11 @@ button:focus {
   line-height: 24px;
 }
 
-.contact-us__form__item textarea:focus {
+.contact-us__form-item textarea:focus {
   outline: none;
 }
 
-.contact-us__form__item-joined {
+.contact-us__form-item--joined {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1246,14 +1253,8 @@ button:focus {
           align-items: center;
 }
 
-.contact-us__form__item-joined div:first-child {
+.contact-us__form-item--joined div:first-child {
   padding-right: 30px;
-}
-
-.contact-us__form .btn {
-  font-size: 16px;
-  background-color: #343a40;
-  color: white;
 }
 
 .contact-us__info {
@@ -1278,7 +1279,16 @@ button:focus {
   color: gray;
 }
 
-.contact-us__info__heading {
+.contact-us__list {
+  color: #a8b1b8;
+}
+
+.contact-us__list-title {
+  margin-top: 16px;
+  color: #fff;
+}
+
+.contact-us__heading {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1295,41 +1305,32 @@ button:focus {
   margin-bottom: 48px;
 }
 
-.contact-us__info__heading h2 {
-  color: #fff;
-}
-
-.contact-us__info__info {
-  color: #a8b1b8;
-}
-
-.contact-us__info__info__title {
-  margin-top: 16px;
+.contact-us__heading h2 {
   color: #fff;
 }
 
 /* *********** 12. Footer ********** */
-footer {
+.footer {
   padding: 128px 0;
   color: gray;
   background-color: #333333;
 }
 
-footer .container {
+.footer .container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 350px 1fr 1fr 285px;
       grid-template-columns: 350px 1fr 1fr 285px;
 }
 
-footer .container section h2 {
+.footer section h2 {
   font-size: 16px;
   font-weight: 500;
   color: #fff;
   margin-bottom: 24px;
 }
 
-footer .container section:last-child {
+.footer section:last-child {
   -ms-grid-column: span 4;
       grid-column-start: span 4;
   margin-top: 48px;
@@ -1339,35 +1340,35 @@ footer .container section:last-child {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-footer .container section:last-child i {
+.footer section:last-child i {
   color: #DC3545;
 }
 
-footer .container .links {
+.footer__links {
   margin-left: 70px;
   padding: 0 15px;
 }
 
-footer .container .links li {
+.footer__links li {
   margin-bottom: 10px;
   font-size: 16px;
 }
 
-footer .container .links li a {
+.footer__links li a {
   color: #999999;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
-footer .container .links li a:hover {
+.footer__links li a:hover {
   color: #fff;
 }
 
-footer .container .follow {
+.footer__follow {
   padding: 0 15px;
 }
 
-footer .container .follow ul {
+.footer__follow ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1386,25 +1387,25 @@ footer .container .follow ul {
           justify-content: flex-start;
 }
 
-footer .container .follow ul li {
+.footer__follow ul li {
   padding: 0 18px;
 }
 
-footer .container .follow ul li a {
+.footer__follow ul li a {
   color: #999999;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
-footer .container .follow ul li a:hover {
+.footer__follow ul li a:hover {
   color: #fff;
 }
 
-footer .container .follow ul li:first-child {
+.footer__follow ul li:first-child {
   padding-left: 0;
 }
 
-footer .container .subscribe input[type=email] {
+.footer__subscribe input[type=email] {
   display: inline-block;
   width: 60%;
   height: 43px;
@@ -1418,11 +1419,11 @@ footer .container .subscribe input[type=email] {
   border-bottom-left-radius: 4px;
 }
 
-footer .container .subscribe input[type=email]:focus {
+.footer__subscribe input[type=email]:focus {
   outline: none;
 }
 
-footer .container .subscribe input[type=submit] {
+.footer__subscribe input[type=submit] {
   height: 43px;
   padding: 10px 30px;
   margin-left: -4px;

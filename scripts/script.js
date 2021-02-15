@@ -1,8 +1,8 @@
 const navNestedLinks = document.querySelectorAll('.nested')
-const navNestedUlOne = document.querySelector('.header__navigation__nav__list__item__nested-one')
-const navNestedUlTwo = document.querySelector('.header__navigation__nav__list__item__nested-two')
+const navNestedUlOne = document.querySelector('.header__nav-item--nest1')
+const navNestedUlTwo = document.querySelector('.header__nav-item--nest2')
 const navBar = document.querySelector('.header__navigation')
-const faqItems = document.querySelectorAll('.faq__questions__question__item')
+const faqItems = document.querySelectorAll('.faq__list-item')
 const carouselContainer = document.querySelector('.happy-customers__testimonials-list')
 const carouselItems = Array.from(document.querySelectorAll('.happy-customers__testimonials-list__item'))
 const carouselArrows = document.querySelectorAll('.happy-customers__arrows__arrow')
@@ -17,7 +17,7 @@ navNestedLinks.forEach(btn => {
         }
     })
     btn.addEventListener('mouseleave', (e)=>{
-        if (e.target.classList.contains('nested-level-two')){
+        if (e.target.classList.contains('nest2')){
             navNestedUlTwo.classList.add('hide')
         } else {
             navNestedUlOne.classList.add('hide')
@@ -40,8 +40,8 @@ window.addEventListener('scroll', () =>{
 faqItems.forEach(item =>{
     item.addEventListener('click', (e) => {
         if(e.target.tagName === 'H3'){
-            faqItems.forEach(item => item.classList.remove('active'))
-            e.target.parentElement.parentElement.classList.add('active')
+            faqItems.forEach(item => item.classList.remove('faq__list-item--active'))
+            e.target.parentElement.parentElement.classList.add('faq__list-item--active')
         }
     })
 })

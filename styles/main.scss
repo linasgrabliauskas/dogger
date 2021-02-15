@@ -98,6 +98,30 @@ button{
     }  
 }
 
+// a
+///////////////////////////////////
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes fade {
+    from {transform: translateX(0)} 
+    to {transform: translateX(380px)}
+  }
+//////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
 /****************** DESKTOP FIRST ******************/
 /********* 1. Header *********/
 .header{
@@ -582,10 +606,11 @@ button{
         @include displayFlex(row);
         align-items: flex-start;
         min-height: 510px;
+        // overflow: hidden;
         &__item{
             @include displayFlex(column);
             margin: 20px;
-            width: 30%;
+            max-width: 340px;
             &__text{
                 background-color: rgb(162, 192, 190);
                 margin-bottom: 24px;

@@ -108,6 +108,37 @@ button:focus {
   outline: none;
 }
 
+.fade {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fade {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(380px);
+            transform: translateX(380px);
+  }
+}
+
+@keyframes fade {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(380px);
+            transform: translateX(380px);
+  }
+}
+
 /****************** DESKTOP FIRST ******************/
 /********* 1. Header *********/
 .header {
@@ -885,7 +916,7 @@ button:focus {
       -ms-flex-align: center;
           align-items: center;
   margin: 20px;
-  width: 30%;
+  max-width: 340px;
 }
 
 .happy-customers__testimonials-list__item__text {

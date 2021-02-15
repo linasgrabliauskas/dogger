@@ -67,7 +67,7 @@ console.log(carouselArrows)
 // slidesNum: Desktop = 3, Tablet = 2, Mobile = 1
 let slidesNum = 3;
 
-showNextSlide(slidesNum);
+// showNextSlide(slidesNum);
 
 // function nextSlides(n) {
 //   showSlides(slideIndex += n);
@@ -81,7 +81,7 @@ function showNextSlide(slidesNum) {
   let hiddenSlideIndex
 
     let firstItem = carouselItems.shift()
-    firstItem.classList.add('hide')
+    // firstItem.classList.add('hide')
     carouselItems.push(firstItem)
     carouselItems[2].classList.remove('hide')
     console.log(carouselItems)
@@ -107,8 +107,6 @@ function showSlides(currSlidesArr){
     carouselContainer.innerHTML = ''
     currSlidesArr.forEach(item => carouselContainer.appendChild(item))
 }
-
-
 
 
 carouselArrows.forEach(arrow =>{

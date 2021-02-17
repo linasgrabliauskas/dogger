@@ -3,9 +3,6 @@ const navNestedUlOne = document.querySelector('.header__nav-item--nest1')
 const navNestedUlTwo = document.querySelector('.header__nav-item--nest2')
 const navBar = document.querySelector('.header__navigation')
 const faqItems = document.querySelectorAll('.faq__list-item')
-const carouselContainer = document.querySelector('.happy-customers__testimonials-list')
-const carouselItems = Array.from(document.querySelectorAll('.happy-customers__testimonials-list__item'))
-const carouselArrows = document.querySelectorAll('.happy-customers__arrows__arrow')
 
 // Navbar Nested Links hover
 navNestedLinks.forEach(btn => {
@@ -46,75 +43,78 @@ faqItems.forEach(item =>{
     })
 })
 
-// Happy Customers Carousel
-console.log(carouselArrows)
 
-
-
-{/* <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div> */}
-
-
-// slidesNum: Desktop = 3, Tablet = 2, Mobile = 1
-let slidesNum = 3;
-
-// showNextSlide(slidesNum);
-
-// function nextSlides(n) {
-//   showSlides(slideIndex += n);
-// }
-
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
-
-function showNextSlide(slidesNum) {
-  let hiddenSlideIndex
-
-    let firstItem = carouselItems.shift()
-    // firstItem.classList.add('hide')
-    carouselItems.push(firstItem)
-    carouselItems[2].classList.remove('hide')
-    console.log(carouselItems)
-    showSlides(carouselItems)
-}
-
-function showPreviousSlide(slidesNum) {
-    let hiddenSlideIndex
-
-    // last click is NextSlide
-    if (carouselItems[3].classList.contains('hide')){
-        carouselItems[3].classList.remove('hide')
-        let lastItem = carouselItems.pop()
-        carouselItems.unshift(lastItem)
-        carouselItems[3].classList.add('hide')
-    }
-
-    // ShowSlides
-    showSlides(carouselItems)
-}
-
-function showSlides(currSlidesArr){
-    carouselContainer.innerHTML = ''
-    currSlidesArr.forEach(item => carouselContainer.appendChild(item))
-}
-
-
-carouselArrows.forEach(arrow =>{
-    arrow.addEventListener('click', e =>{
-        if(e.target.classList.contains('right')){
-            showNextSlide()
-        } else {
-            showPreviousSlide()
-        }
+// Happy Customers Carousel using Slick
+$(document).ready(function(){
+    $('.happy-customers__list').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: $('.slick-prev'),
+        nextArrow: $('.slick-next'),
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            //       {
+            //         breakpoint: 1024,
+            //         settings: {
+            //           slidesToShow: 3,
+            //           slidesToScroll: 3,
+            //           infinite: true,
+            //           dots: true
+            //         }
+            //       },
+            //       {
+            //         breakpoint: 600,
+            //         settings: {
+            //           slidesToShow: 2,
+            //           slidesToScroll: 2
+            //         }
+            //       },
+            //       {
+            //         breakpoint: 480,
+            //         settings: {
+            //           slidesToShow: 1,
+            //           slidesToScroll: 1
+            //         }
+            //       }
+                ]
     })
 })
+
+// -- Animations: OnScroll Animations with GSAP
+
+// - Animations even: 
+gsap.registerPlugin(ScrollTrigger)
+gsap.to('.animation-e', {
+    scrollTrigger: { 
+        trigger: ".animation-e", 
+        toggleActions: "play reverse play reverse" },
+    duration: 1, y: 0, opacity: 1,
+    start: "top", 
+    ease: "power1"
+})
+
+// gsap.to('.animation-ee', {
+//     scrollTrigger: { trigger: ".animation-ee", toggleActions: "restart none reverse reset"},
+//     duration: 1, y: 0, opacity: 1, 
+//     stagger: 0.2, 
+//     // start: "bottom", 
+//     ease: "power1"
+// })
+
+// - Animations odd:
+// gsap.to('.animation-o', {
+//     scrollTrigger: { trigger: ".animation-trigger-odd", toggleActions: "restart none none none" },
+//     duration: 1, y: 0, opacity: 1,
+//     start: "top", 
+//     ease: "power1"
+// })
+// gsap.to('.animation-oo', {
+//     scrollTrigger: { trigger: ".animation-trigger-odd", toggleActions: "restart none none none"},
+//     duration: 1, y: 0, opacity: 1, 
+//     stagger: 0.2, 
+//     start: "top", 
+//     ease: "power1"
+// })

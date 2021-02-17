@@ -98,27 +98,10 @@ button{
     }  
 }
 
-// a
-///////////////////////////////////
-.fade {
-    animation-name: fade;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-  }
-  
-  @keyframes fade {
-    from {transform: translateX(0)} 
-    to {transform: translateX(380px)}
-  }
-//////////////////////////////////
-
-
-
-
-
-
-
-
+.animation-e, .animation-ee, .animation-o, .animation-oo {
+    transform: translateY(200px);
+    opacity: 0;
+}
 
 
 
@@ -601,10 +584,8 @@ button{
         margin-bottom: 48px;
     }
     &__list{
-        @include displayFlex(row);
         align-items: flex-start;
         min-height: 510px;
-        // overflow: hidden;
     }
     &__list-item{
         @include displayFlex(column);
@@ -637,7 +618,7 @@ button{
     &__photo{
         width: 100px;
         height: 100px;
-        margin: 20px 0;
+        margin: 40px auto 20px auto;
         border: 10px solid rgb(162, 192, 190);
         border-radius: 50%;
         overflow: hidden;
@@ -647,6 +628,7 @@ button{
         }
     }
     &__name{
+        text-align: center;
         font-size: 18px;
         font-weight: 500;
         color: #000;

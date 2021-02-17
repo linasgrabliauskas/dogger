@@ -108,35 +108,10 @@ button:focus {
   outline: none;
 }
 
-.fade {
-  -webkit-animation-name: fade;
-          animation-name: fade;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes fade {
-  from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  to {
-    -webkit-transform: translateX(380px);
-            transform: translateX(380px);
-  }
-}
-
-@keyframes fade {
-  from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  to {
-    -webkit-transform: translateX(380px);
-            transform: translateX(380px);
-  }
+.animation-e, .animation-ee, .animation-o, .animation-oo {
+  -webkit-transform: translateY(200px);
+          transform: translateY(200px);
+  opacity: 0;
 }
 
 /****************** DESKTOP FIRST ******************/
@@ -883,19 +858,6 @@ button:focus {
 }
 
 .happy-customers__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -948,7 +910,7 @@ button:focus {
 .happy-customers__photo {
   width: 100px;
   height: 100px;
-  margin: 20px 0;
+  margin: 40px auto 20px auto;
   border: 10px solid #a2c0be;
   border-radius: 50%;
   overflow: hidden;
@@ -960,6 +922,7 @@ button:focus {
 }
 
 .happy-customers__name {
+  text-align: center;
   font-size: 18px;
   font-weight: 500;
   color: #000;

@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="./build/css/main.css">
     <title>Dogger</title>
+    <script defer src="//code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script defer src="//code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" type="text/javascript"></script>
     <script defer src="https://kit.fontawesome.com/47d83c0ac2.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollToPlugin.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
     <script defer src="./scripts/script.js"></script>
 </head>
 <body>
@@ -138,14 +145,14 @@
         <!-- *********** 4. Section: Our Trainers *********** -->
        <section class="our-trainers">
             <div class="container">
-                <article class="our-trainers__heading">
+                <article class="our-trainers__heading animation-e">
                     <div class="paws"><img src="./assets/img/paws2.jpg" alt="paws"></div>
                     <h2>OUR TRAINERS</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                 </article>
 
                 <ul class="our-trainers__list">
-                    <li class="our-trainers__list-item">
+                    <li class="our-trainers__list-item animation-ee">
                         <div class="our-trainers__img">
                             <img class="img-fluid" src="./assets/img/dogger_trainer_1.jpg" alt="trainer1">
                         </div>
@@ -158,7 +165,7 @@
                         </ul>
                     </li>
 
-                    <li class="our-trainers__list-item">
+                    <li class="our-trainers__list-item animation-ee">
                         <div class="our-trainers__img">
                             <img class="img-fluid" src="./assets/img/dogger_trainer_2.jpg" alt="trainer2">
                         </div>
@@ -171,7 +178,7 @@
                         </ul>
                     </li>
 
-                    <li class="our-trainers__list-item">
+                    <li class="our-trainers__list-item animation-ee">
                         <div class="our-trainers__img">
                             <img class="img-fluid" src="./assets/img/dogger_trainer_3.jpg" alt="trainer3">
                         </div>
@@ -189,16 +196,16 @@
        </section>
 
          <!-- *********** 5. Section: Pricing table *********** -->
-       <section class="pricing-table">
+       <section class="pricing-table animation-trigger-odd">
            <div class="container">
-               <article class="pricing-table__heading">
+               <article class="pricing-table__heading animation-o">
                     <div class="paws"><img src="./assets/img/paws.jpg" alt="paws"></div>
                     <h2>PRICING TABLE</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                </article>
 
                <article class="pricing-table__card-list">
-                    <div class="pricing-table__card">
+                    <div class="pricing-table__card animation-oo">
                         <h3 class="pricing-table__title">BASIC</h3>
                         <p class="pricing-table__price"><span>$47</span>/year</p>
                         <ul class="pricing-table__list">
@@ -211,7 +218,7 @@
                         <a class="btn" href="#">Buy Now</a>
                     </div>
 
-                    <div class="pricing-table__card pricing-table__card--dark">
+                    <div class="pricing-table__card pricing-table__card--dark animation-oo">
                         <h3 class="pricing-table__title">PREMIUM</h3>
                         <p class="pricing-table__price"><span>$250</span>/year</p>
                         <ul class="pricing-table__list">
@@ -224,7 +231,7 @@
                         <a class="btn" href="#">Buy Now</a>
                     </div>
 
-                    <div class="pricing-table__card">
+                    <div class="pricing-table__card animation-oo">
                         <h3 class="pricing-table__title">PROFESSIONAL</h3>
                         <p class="pricing-table__price"><span>$850</span>/year</p>
                         <ul class="pricing-table__list">
@@ -241,16 +248,16 @@
        </section>
 
         <!-- *********** 6. Section: FAQ *********** -->
-       <section class="faq">
+       <section class="faq animation-trigger-even">
            <div class="container">
-                <article class="faq__heading">
+                <article class="faq__heading animation-e">
                     <div class="paws"><img src="./assets/img/paws.jpg" alt="paws"></div>
                     <h2>FREQUENTLY ASK QUESTIONS</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                 </article>
 
                 <article class="faq__questions">
-                    <ul class="faq__list">
+                    <ul class="faq__list animation-ee">
                         <li class="faq__list-item">
                             <div class="faq__paw"></div>
                             <article>
@@ -280,7 +287,7 @@
                             </article>
                         </li>
                     </ul>
-                    <div class="img-fluid"><img src="./assets/img/dogger_img_sm_1.jpg" alt="doge"></div>
+                    <div class="img-fluid animation-ee"><img src="./assets/img/dogger_img_sm_1.jpg" alt="doge"></div>
                 </article>
            </div>
        </section>
@@ -295,7 +302,7 @@
             </section>
 
             <ul class="happy-customers__list">
-                <li class="happy-customers__list-item fade">
+                <li class="happy-customers__list-item">
                     <p class="happy-customers__text">“A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.”</p>
                     <div class="happy-customers__photo">
                         <img src="./assets/img/person_1.jpg" alt="person">
@@ -303,7 +310,7 @@
                     <h3 class="happy-customers__name">Mellisa Griffin</h3>
                 </li>
 
-                <li class="happy-customers__list-item fade">
+                <li class="happy-customers__list-item">
                     <p class="happy-customers__text">“Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.”</p>
                     <div class="happy-customers__photo">
                         <img src="./assets/img/person_3.jpg" alt="person">
@@ -311,7 +318,7 @@
                     <h3 class="happy-customers__name">Robert Steward</h3>
                 </li>
 
-                <li class="happy-customers__list-item fade">
+                <li class="happy-customers__list-item">
                     <p class="happy-customers__text">“The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.”</p>
                     <div class="happy-customers__photo">
                         <img src="./assets/img/person_4.jpg" alt="person">
@@ -319,7 +326,7 @@
                     <h3 class="happy-customers__name">Ricky Fisher</h3>
                 </li>
 
-                <li class="happy-customers__list-item fade hide">
+                <li class="happy-customers__list-item">
                     <p class="happy-customers__text">“Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.”</p>
                     <div class="happy-customers__photo">
                         <img src="./assets/img/person_2.jpg" alt="person">
@@ -328,8 +335,9 @@
                 </li>
             </ul>
             <div class="happy-customers__arrows">
-                <div class="happy-customers__arrow"><i class="fas fa-arrow-left left"></i></div>
-                <div class="happy-customers__arrow"><i class="fas fa-arrow-right right"></i></div>
+                <!-- <button type="button" class="slick-next">Next</button> -->
+                <div class="happy-customers__arrow slick-prev"><i class="fas fa-arrow-left left"></i></div>
+                <div class="happy-customers__arrow slick-next"><i class="fas fa-arrow-right right"></i></div>
             </div>
 
            </div>

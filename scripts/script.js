@@ -56,15 +56,15 @@ $(document).ready(function(){
         autoplay: true,
         autoplaySpeed: 3000,
         responsive: [
-            //       {
-            //         breakpoint: 1024,
-            //         settings: {
-            //           slidesToShow: 3,
-            //           slidesToScroll: 3,
-            //           infinite: true,
-            //           dots: true
-            //         }
-            //       },
+            {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+                // dots: true
+                }
+            },
             //       {
             //         breakpoint: 600,
             //         settings: {
@@ -84,37 +84,23 @@ $(document).ready(function(){
 })
 
 // -- Animations: OnScroll Animations with GSAP
-
-// - Animations even: 
 gsap.registerPlugin(ScrollTrigger)
-gsap.to('.animation-e', {
+
+gsap.fromTo('.animation-ee', { y: 200, opacity: 0} ,
+ {
     scrollTrigger: { 
-        trigger: ".animation-e", 
-        toggleActions: "play reverse play reverse" },
-    duration: 1, y: 0, opacity: 1,
-    start: "top", 
+        trigger: ".animation-ee-trigger", 
+        toggleActions: "restart none none none",
+        // toggleActions: "restart none reverse none",
+        start: "-200px center", 
+        // end: "-200px center",
+        // markers: true,
+        // scrub: true
+    },
+    duration: 1, 
+    y: 0, 
+    opacity: 1, 
+    stagger: 0.2, 
+   
     ease: "power1"
 })
-
-// gsap.to('.animation-ee', {
-//     scrollTrigger: { trigger: ".animation-ee", toggleActions: "restart none reverse reset"},
-//     duration: 1, y: 0, opacity: 1, 
-//     stagger: 0.2, 
-//     // start: "bottom", 
-//     ease: "power1"
-// })
-
-// - Animations odd:
-// gsap.to('.animation-o', {
-//     scrollTrigger: { trigger: ".animation-trigger-odd", toggleActions: "restart none none none" },
-//     duration: 1, y: 0, opacity: 1,
-//     start: "top", 
-//     ease: "power1"
-// })
-// gsap.to('.animation-oo', {
-//     scrollTrigger: { trigger: ".animation-trigger-odd", toggleActions: "restart none none none"},
-//     duration: 1, y: 0, opacity: 1, 
-//     stagger: 0.2, 
-//     start: "top", 
-//     ease: "power1"
-// })

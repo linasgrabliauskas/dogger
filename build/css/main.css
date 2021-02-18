@@ -108,12 +108,6 @@ button:focus {
   outline: none;
 }
 
-.animation-e, .animation-ee, .animation-o, .animation-oo {
-  -webkit-transform: translateY(200px);
-          transform: translateY(200px);
-  opacity: 0;
-}
-
 /****************** DESKTOP FIRST ******************/
 /********* 1. Header *********/
 .header {
@@ -161,6 +155,10 @@ button:focus {
   display: -ms-flexbox;
   display: flex;
   padding: 0 15px;
+}
+
+.header__nav-mobile {
+  display: none;
 }
 
 .header__nav-item a {
@@ -1394,5 +1392,112 @@ button:focus {
   border: none;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+  .header__nav-desktop {
+    display: none;
+  }
+  .header__nav-mobile {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 300px;
+    padding: 50px 20px 150px 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    background-color: #fff;
+  }
+  .header__nav-mobile-item a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #212529;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 34px;
+    position: relative;
+  }
+  .header__nav-mobile-item a i {
+    padding-left: 20px;
+    vertical-align: text-top;
+    padding-top: 7px;
+    font-size: 13px;
+  }
+  .header__nav-mobile-item:first-child {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .header__nav-mobile-item:first-child button {
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 100;
+    color: grey;
+  }
+  .header__nav-mobile-item:hover a {
+    color: #a2c0be;
+  }
+  /* 7. Section: Happy customers */
+  .happy-customers__list-item {
+    max-width: 50%;
+  }
+  /* 8. Section: Photo gallery */
+  .photo-gallery__gallery {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  /* 11. Section: Contact Us */
+  .contact-us__list {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+    padding: 0 15px;
+  }
+  /* 2. Section: Welcome */
+  .welcome__heading p {
+    width: 80%;
+  }
+  .welcome__article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .welcome__article:nth-child(3) .welcome__article-info {
+    margin: 0 0 24px 0;
+    padding: 0 15px;
+  }
+  .welcome__article-info {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin: 0 0 24px 0;
+    padding: 0 15px;
+    text-align: left;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -98,10 +98,11 @@ button{
     }  
 }
 
-.animation-e, .animation-ee, .animation-o, .animation-oo {
-    transform: translateY(200px);
-    opacity: 0;
-}
+// .animation-e, .animation-ee, .animation-o, .animation-oo {
+//     transform: translateY(200px);
+//     opacity: 0;
+// }
+
 
 
 
@@ -136,6 +137,9 @@ button{
     &__nav-desktop{
         display: flex;
         padding: 0 15px;
+    }
+    &__nav-mobile{
+        display: none;
     }
     &__nav-item{
         a{
@@ -923,4 +927,211 @@ button{
             border-bottom-right-radius: 4px;
         }
     }
+}
+
+
+// Responsive
+@media screen and (max-width: 1200px) {
+    .container{
+        max-width: 960px;
+    }
+
+    // Header
+    .header{
+        &__navigation{
+            // &::before{
+            //     content: "";
+            //     background-color: rgba(0, 0, 0, 0.25);
+            //     position: absolute;
+            //     width: 100vw;
+            //     height: 100vh;
+            //     z-index: 1;
+            // }
+        }
+        &__nav-desktop{
+            display: none;
+        }
+        &__nav-mobile{
+            display: none;
+            flex-direction: column;
+            width: 300px;
+            padding: 50px 20px 150px 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 5;
+            background-color: #fff;
+            // border: 1px solid red;
+            
+        }
+        &__nav-mobile-item{
+            a{
+                display: inline-block;
+                padding: 10px 20px;
+                color: #212529;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 34px;
+                position: relative;
+                i{  
+                    padding-left: 20px;
+                    vertical-align:text-top;
+                    padding-top: 7px;
+                    font-size: 13px;
+                }
+            }
+            &:first-child{
+                align-self: flex-end;
+                button{
+                    padding: 10px 20px;
+                    border: none;
+                    background-color: transparent;
+                    font-size: 20px;
+                    font-weight: 100;
+                    color: grey;
+                }
+            }
+            &:hover a{
+                color:#a2c0be;
+            }
+        }
+    }
+
+    /* 7. Section: Happy customers */
+    .happy-customers{
+        &__list-item{
+            max-width: 50%;
+        }
+    }
+
+    /* 8. Section: Photo gallery */
+    .photo-gallery{
+        &__gallery{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    /* 11. Section: Contact Us */
+    .contact-us{
+        &__list{
+            width: 50%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .container{
+        max-width: 720px;
+        padding: 0 15px;
+    }
+
+    // // Header
+    // .header{
+    //     &__navigation{
+    //         // &::before{
+    //         //     content: "";
+    //         //     background-color: rgba(0, 0, 0, 0.25);
+    //         //     position: absolute;
+    //         //     width: 100vw;
+    //         //     height: 100vh;
+    //         //     z-index: 1;
+    //         // }
+    //     }
+    //     &__nav-desktop{
+    //         display: none;
+    //     }
+    //     &__nav-mobile{
+    //         display: none;
+    //         flex-direction: column;
+    //         width: 300px;
+    //         padding: 50px 20px 150px 20px;
+    //         position: absolute;
+    //         top: 0;
+    //         right: 0;
+    //         bottom: 0;
+    //         z-index: 5;
+    //         background-color: #fff;
+    //         // border: 1px solid red;
+            
+    //     }
+    //     &__nav-mobile-item{
+    //         a{
+    //             display: inline-block;
+    //             padding: 10px 20px;
+    //             color: #212529;
+    //             font-size: 20px;
+    //             font-weight: 400;
+    //             line-height: 34px;
+    //             position: relative;
+    //             i{  
+    //                 padding-left: 20px;
+    //                 vertical-align:text-top;
+    //                 padding-top: 7px;
+    //                 font-size: 13px;
+    //             }
+    //         }
+    //         &:first-child{
+    //             align-self: flex-end;
+    //             button{
+    //                 padding: 10px 20px;
+    //                 border: none;
+    //                 background-color: transparent;
+    //                 font-size: 20px;
+    //                 font-weight: 100;
+    //                 color: grey;
+    //             }
+    //         }
+    //         &:hover a{
+    //             color:#a2c0be;
+    //         }
+    //     }
+    // }
+
+
+    /* 2. Section: Welcome */
+    .welcome{
+        &__heading{
+            p{
+                width: 80%;
+            }
+        }
+        &__article{
+            @include displayFlex(column);
+            &:nth-child(3) .welcome__article-info{
+                margin: 0 0 24px 0;
+                padding: 0 15px;
+            }
+        }
+        &__article-info{
+            flex-basis: 100%;
+            order: 2;
+            margin: 0 0 24px 0;
+            padding: 0 15px;
+            text-align: left;
+        }
+        
+    }
+
+    // /* 7. Section: Happy customers */
+    // .happy-customers{
+    //     &__list-item{
+    //         max-width: 50%;
+    //     }
+    // }
+
+    // /* 8. Section: Photo gallery */
+    // .photo-gallery{
+    //     &__gallery{
+    //         grid-template-columns: repeat(3, 1fr);
+    //     }
+    // }
+
+    // /* 11. Section: Contact Us */
+    // .contact-us{
+    //     &__list{
+    //         width: 50%;
+    //     }
+    // }
 }

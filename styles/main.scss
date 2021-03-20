@@ -115,7 +115,7 @@ button{
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-
+    overflow: hidden;
     &__navigation{
         .container{
             display: flex;
@@ -138,7 +138,10 @@ button{
         display: flex;
         padding: 0 15px;
     }
-    &__nav-mobile{
+    // &__nav-mobile, &__hamburger{
+    //     display: none;
+    // }
+    &__hamburger{
         display: none;
     }
     &__nav-item{
@@ -202,17 +205,19 @@ button{
     &__showcase{
         position: absolute;
         bottom: 0;
-        left: 20%;
-        .container{    
+        left: 0;
+        right: 0;
+        .container{   
             height: 100%; 
             display: flex;
             justify-content: space-between;
+            align-items: flex-end;
         }
     }  
     &__showcase-info{
         flex-basis: 55%;
         align-self: flex-start;
-        padding: 70px 15px 0 15px;
+        padding: 70px 15px 0 30px;
         h1{
             color:#000;
             font-size: 64px;
@@ -224,14 +229,14 @@ button{
             color: rgb(153,153,153);
             font-weight: 100;
             font-size: 19.2px;
-            width: 400px;
+            width: 80%;
             line-height: 1.5; 
         }
     }
     &__showcase-img{
+        flex-basis: 50%;
         img{
-            width: 445px;
-            height: 658px;
+            max-width: 80%;
             margin: 0 16px -8px 15px;
         }
     } 
@@ -844,7 +849,7 @@ button{
     background-color: rgb(51, 51, 51);
     .container{
         display: grid;
-        grid-template-columns: 350px 1fr 1fr 285px;
+        grid-template-columns: 280px 1fr 1fr 250px;
     }
     section{
         h2{
@@ -930,40 +935,35 @@ button{
 }
 
 
-// Responsive
+// ------------------------------------ Responsive ------------------------------------
 @media screen and (max-width: 1200px) {
     .container{
         max-width: 960px;
     }
-
     // Header
     .header{
-        &__navigation{
-            // &::before{
-            //     content: "";
-            //     background-color: rgba(0, 0, 0, 0.25);
-            //     position: absolute;
-            //     width: 100vw;
-            //     height: 100vh;
-            //     z-index: 1;
-            // }
-        }
         &__nav-desktop{
             display: none;
         }
+        &__hamburger{
+            display: block;
+            color: #000;
+            font-size: 24px;
+            padding-top: 12px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
         &__nav-mobile{
-            display: none;
             flex-direction: column;
             width: 300px;
             padding: 50px 20px 150px 20px;
-            position: absolute;
+            position: fixed;
             top: 0;
             right: 0;
             bottom: 0;
             z-index: 5;
-            background-color: #fff;
-            // border: 1px solid red;
-            
+            background-color: #fff; 
         }
         &__nav-mobile-item{
             a{
@@ -990,6 +990,10 @@ button{
                     font-size: 20px;
                     font-weight: 100;
                     color: grey;
+                    &:hover{
+                        cursor: pointer;
+                        color:#000;
+                    }
                 }
             }
             &:hover a{
@@ -1027,68 +1031,24 @@ button{
         padding: 0 15px;
     }
 
-    // // Header
-    // .header{
-    //     &__navigation{
-    //         // &::before{
-    //         //     content: "";
-    //         //     background-color: rgba(0, 0, 0, 0.25);
-    //         //     position: absolute;
-    //         //     width: 100vw;
-    //         //     height: 100vh;
-    //         //     z-index: 1;
-    //         // }
-    //     }
-    //     &__nav-desktop{
-    //         display: none;
-    //     }
-    //     &__nav-mobile{
-    //         display: none;
-    //         flex-direction: column;
-    //         width: 300px;
-    //         padding: 50px 20px 150px 20px;
-    //         position: absolute;
-    //         top: 0;
-    //         right: 0;
-    //         bottom: 0;
-    //         z-index: 5;
-    //         background-color: #fff;
-    //         // border: 1px solid red;
-            
-    //     }
-    //     &__nav-mobile-item{
-    //         a{
-    //             display: inline-block;
-    //             padding: 10px 20px;
-    //             color: #212529;
-    //             font-size: 20px;
-    //             font-weight: 400;
-    //             line-height: 34px;
-    //             position: relative;
-    //             i{  
-    //                 padding-left: 20px;
-    //                 vertical-align:text-top;
-    //                 padding-top: 7px;
-    //                 font-size: 13px;
-    //             }
-    //         }
-    //         &:first-child{
-    //             align-self: flex-end;
-    //             button{
-    //                 padding: 10px 20px;
-    //                 border: none;
-    //                 background-color: transparent;
-    //                 font-size: 20px;
-    //                 font-weight: 100;
-    //                 color: grey;
-    //             }
-    //         }
-    //         &:hover a{
-    //             color:#a2c0be;
-    //         }
-    //     }
-    // }
-
+    /* 1. Section: Header */
+    .header{
+        &__showcase-info{
+            padding: 70px 15px 0 50px;
+            h1{
+                font-size: 32px;
+            }
+            p{
+                width: 100%;
+            }
+        }
+        &__showcase-img{
+            flex-basis: 60%;
+            img{
+                max-width: 100%;
+            }
+        }
+    }
 
     /* 2. Section: Welcome */
     .welcome{
@@ -1111,27 +1071,290 @@ button{
             padding: 0 15px;
             text-align: left;
         }
-        
+        &__article-img{
+            width: 100%;
+            margin-bottom: 20px;
+        }
     }
 
-    // /* 7. Section: Happy customers */
-    // .happy-customers{
-    //     &__list-item{
-    //         max-width: 50%;
-    //     }
-    // }
+    /* 3. Section: About Us */
+    .about-us{
+        .container{
+            flex-direction: column;
+        }
+        &__info{
+            flex-basis: 100%;
+            margin: 0 0 40px 0; 
+        }
+    }
 
-    // /* 8. Section: Photo gallery */
-    // .photo-gallery{
-    //     &__gallery{
-    //         grid-template-columns: repeat(3, 1fr);
-    //     }
-    // }
+    /* 4. Section: Our trainers */
+    .our-trainers{
+        &__heading{
+            p{
+                width: 100%;
+            }
+        }
+        &__list{
+            flex-wrap: wrap;
+        }
+        &__list-item{
+            flex-basis: 50%;
+        }
+    }
 
-    // /* 11. Section: Contact Us */
-    // .contact-us{
-    //     &__list{
-    //         width: 50%;
-    //     }
-    // }
+    /* 5. Section: Pricing table */
+    .pricing-table{
+        &__heading{
+            p{
+                width: 100%;
+            }     
+        }
+        &__card-list{
+            flex-wrap: wrap;
+        }
+        &__card{
+            flex-basis: 50%;
+        }
+    }
+
+    /* 6. Section: FAQ */
+    .faq{
+        &__heading{
+            p{
+                width: 100%;
+            }
+        }
+        &__questions{
+            flex-direction: column;
+        }
+        &__list{
+            width: 100%;
+            order: 2;
+            margin-top: 40px;
+        }
+        &__list-item{
+            article{
+                width: 100%;
+            }
+        }
+        .img-fluid{
+            width: 100%;
+        }
+    }
+
+    /* 8. Section: Photo gallery */
+    .photo-gallery{
+        &__gallery{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* 9. Section: Dogger blog  */
+    .dogger-blog{
+        &__heading{
+            p{
+                width: 100%;
+            }
+        }
+        &__list-item{
+            flex-direction: column;
+        }
+        &__photo{
+            max-width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    /* 10. Section: Our services */
+    .our-services{
+        &__heading{
+            p{
+                width: 100%;
+            }
+        }
+        &__list{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__list-item{
+            margin-bottom: 40px;
+        }
+    }
+
+    /* 11. Section: Contact Us */
+    .contact-us{
+        .container{
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* 12. Footer */
+    .footer{
+        padding: 60px 0;
+        .container{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        section{
+            margin-bottom: 40px;
+            &:last-child{
+                grid-column-start: span 2;
+                margin-top: 0;
+                padding-top: 0px;
+            }
+        }
+    }
 }
+
+
+@media screen and (max-width: 768px) {
+    .container{
+        max-width: 720px;
+        padding: 0 15px;
+    }
+
+    /* 1. Section: Header */
+    .header{
+        &__showcase{
+            .container{   
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        } 
+        &__showcase-info{
+            width: 100%;
+            padding: 70px 15px 50px 50px;
+            text-align: center;
+        }
+        &__showcase-img{
+            img{
+                max-width: 400px;
+            }
+        }
+    }
+
+    /* 2. Section: Welcome */
+    .welcome{
+        padding: 40px 0;
+    }
+
+    /* 3. Section: About Us */
+    .about-us{
+        padding: 40px 0;
+    }
+
+    /* 4. Section: Our trainers */
+    .our-trainers{
+        padding: 40px 0;
+        &__heading{
+            p{
+                width: 90%;
+            }
+        }
+        &__list-item{
+            flex-basis: 100%;
+        }
+    }
+
+    /* 5. Section: Pricing table */
+    .pricing-table{
+        padding: 40px 0;
+        &__card{
+            flex-basis: 100%;
+        }
+    }
+
+    /* 6. Section: FAQ */
+    .faq{
+        padding: 40px 0;
+    }
+
+    /* 7. Section: Happy customers */
+    .happy-customers{
+        padding: 40px 0;
+        &__list-item{
+            width: 100%;
+        }
+        &__text{
+            padding-bottom: 60px;
+        }
+    }
+
+    /* 8. Section: Photo gallery */
+    .photo-gallery{
+        padding: 40px 0;
+    }
+
+    /* 9. Section: Dogger blog  */
+    .dogger-blog{
+        padding: 40px 0;
+        &__list{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); 
+        }
+    }
+
+    /* 10. Section: Our services */
+    .our-services{
+        padding: 40px 0;
+        &__list{
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    /* 11. Section: Contact Us */
+    .contact-us{
+        &__form-item{
+            &--joined{
+                flex-direction: column;
+                align-items: stretch;
+                div:first-child{
+                    padding-right: 0;
+                }
+            }
+        }
+         &__info{
+            padding: 10% 0;
+        }
+    }
+
+    /* 12. Footer */
+    .footer{
+        .container{
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+        }
+        section{
+            margin-bottom: 40px;
+            margin-left: 15px;
+            &:last-child{
+                grid-column-start: span 1;
+                margin-top: 0;
+                padding-top: 0px;
+            }
+        }
+        &__links{
+            margin-left: 0px;
+            padding: 0;
+        }
+        &__follow{
+            padding: 0;
+        }
+    }
+}
+
+@media screen and (max-height: 740px){
+       /* 1. Section: Header */
+       .header{
+        &__showcase-info{
+            padding: 0 15px 50px 15px;
+        }
+        &__showcase-img{
+            img{
+                max-width: 200px;
+            }
+        }
+    }
+}
+

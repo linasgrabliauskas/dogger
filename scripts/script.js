@@ -3,6 +3,9 @@ const navNestedUlOne = document.querySelector('.header__nav-item--nest1')
 const navNestedUlTwo = document.querySelector('.header__nav-item--nest2')
 const navBar = document.querySelector('.header__navigation')
 const faqItems = document.querySelectorAll('.faq__list-item')
+const hamburger = document.querySelector('.header__hamburger')
+const mobileNavMenu = document.querySelector('.header__nav-mobile')
+const mobileNavMenuClose = document.querySelector('.mobile-close')
 
 // Navbar Nested Links hover
 navNestedLinks.forEach(btn => {
@@ -62,24 +65,15 @@ $(document).ready(function(){
                 slidesToShow: 2,
                 slidesToScroll: 1,
                 infinite: true,
-                // dots: true
-                }
-            },
-            //       {
-            //         breakpoint: 600,
-            //         settings: {
-            //           slidesToShow: 2,
-            //           slidesToScroll: 2
-            //         }
-            //       },
-            //       {
-            //         breakpoint: 480,
-            //         settings: {
-            //           slidesToShow: 1,
-            //           slidesToScroll: 1
-            //         }
-            //       }
-                ]
+            }},
+            {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+            }}
+        ]
     })
 })
 
@@ -104,3 +98,19 @@ gsap.fromTo('.animation-ee', { y: 200, opacity: 0} ,
    
     ease: "power1"
 })
+
+// Navbar hamburger toggle
+hamburger.addEventListener('click', () => {
+    mobileNavMenu.classList.remove('hide')
+})
+
+mobileNavMenuClose.addEventListener('click', ()=>{
+    mobileNavMenu.classList.add('hide')
+})
+
+// Things to do:
+// [ ] Animations
+// [ ] Video ?? maybe
+// [x] Mobile menu CLICK (check original)
+// [ ] Routing to sections
+// [ ] Modal to picture gallery ?? maybe

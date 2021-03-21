@@ -6,6 +6,9 @@ const faqItems = document.querySelectorAll('.faq__list-item')
 const hamburger = document.querySelector('.header__hamburger')
 const mobileNavMenu = document.querySelector('.header__nav-mobile')
 const mobileNavMenuClose = document.querySelector('.mobile-close')
+const galleryImages = document.querySelectorAll('.photo-gallery__gallery-img')
+const galleryModal = document.querySelector('.gallery__modal')
+const galleryModalImage = document.querySelector('.gallery__modal-image')
 
 // Navbar Nested Links hover
 navNestedLinks.forEach(btn => {
@@ -108,9 +111,34 @@ mobileNavMenuClose.addEventListener('click', ()=>{
     mobileNavMenu.classList.add('hide')
 })
 
+
 // Things to do:
 // [ ] Animations
-// [ ] Video ?? maybe
 // [x] Mobile menu CLICK (check original)
-// [ ] Routing to sections
-// [ ] Modal to picture gallery ?? maybe
+// [x] Routing to sections
+// [x] Modal to picture gallery
+
+
+// Gallery modal
+const openImageModal = (e) => {
+    const src = e.target.src
+    galleryModal.classList.remove('hide')
+    galleryModalImage.src = src
+}
+
+const closeImageModal = (e) => {
+    // console.log(e.target)
+    if(e.target.classList.contains('gallery__modal')){
+        galleryModal.classList.add('hide')
+    }
+    if(e.target.classList.contains('gallery__modal-content')){
+        galleryModal.classList.add('hide')
+    }
+    else if(e.key === "Escape" && !galleryModal.classList.contains('hide')){
+        galleryModal.classList.add('hide')
+    }
+}
+
+galleryImages.forEach(image => image.addEventListener('click', openImageModal))
+galleryModal.addEventListener('click', closeImageModal)
+document.addEventListener('keyup', closeImageModal)
